@@ -1,12 +1,11 @@
-() - event binding syntax is used to pass the data from HTML to TS
-[] - property binding syntax is used to pass the data from TS to HTML
-
-[()] - this is called as banana in box syntax
-       which is used for two way data binding
-	   But in order to use two way data binding we have to use built-in module known as
-	   FormsModule
-	   Two way data binding is very important feature in Anglar and very popular
-	   All form submission is typicalyy done using two data binding syntax
-	   		[(ngModel)]="username" 
-	   where ngModel is built-in attribute given by Anglar
-	   username is the field define by TS field 
+Routing:
+  It is used to for navigation
+  It enables navigation by intrapreting url as instruction to change view
+  Every component is associated with one uniqe url
+  following are the steps involved
+	1.Declare a array of object to map path(url with a component) in app.routes.ts file
+	2.Mention this provider of the routes inside app.config.ts file
+	3.Write following tag in app component html file
+	  <router-outlet>
+	4.Instead of href attribute use routerLink attribute and specify url as mention the first step
+	5.Import RouterModule in the component needed

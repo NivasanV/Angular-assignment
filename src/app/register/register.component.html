@@ -1,7 +1,7 @@
-<form>
-    <input type="number" placeholder="Roll No"><br>
-    <input type="text" placeholder="Name" ><br>
-    <input type="number" placeholder="No of Attempts"><br>
-    <input type="number" placeholder="Percentage"><br>
+<form (ngSubmit)="performRegister()">
+    <input type="number" placeholder="Roll No" name="rollno" [(ngModel)]="rollNo"><br>
+    <input type="text" placeholder="Name" name="name" [(ngModel)]="name"><br>
+    <input type="number" placeholder="No of Attempts" name="attempts" [(ngModel)]="attempts"><br>
+    <input type="number" placeholder="Percentage" name="percentage" [(ngModel)]="percentage"><br>
     <button type="submit">Register</button>
 </form>

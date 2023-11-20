@@ -1,3 +1,5 @@
+
+<br>
 <button (click)="showStudents()">Show Students</button>
 <br>
 <label>Sort By:</label>
@@ -18,7 +20,7 @@
     <tbody>
         <tr *ngFor="let s of students">
             <td>{{s.rollNo}}</td>
-            <td>{{s.name}}</td>
+            <td>{{s.name | uppercase}}</td>
             <td>{{s.attempts}}</td>
             <td>{{s.percentage}}</td>
             <td>
