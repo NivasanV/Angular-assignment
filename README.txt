@@ -1,11 +1,24 @@
-Routing:
-  It is used to for navigation
-  It enables navigation by intrapreting url as instruction to change view
-  Every component is associated with one uniqe url
-  following are the steps involved
-	1.Declare a array of object to map path(url with a component) in app.routes.ts file
-	2.Mention this provider of the routes inside app.config.ts file
-	3.Write following tag in app component html file
-	  <router-outlet>
-	4.Instead of href attribute use routerLink attribute and specify url as mention the first step
-	5.Import RouterModule in the component needed
+Component Communication:
+	-This is a techniqe in which parent component and child component Communicate
+	each other by sending data
+	
+	1. parent to child :
+		to send the data from parent to child we need to use @Input Decorator
+		following steps needs to be followed:
+			1.Declare property in child component and Decorate with this @Input
+			2.with in the tag of child component pass the data to child component
+			using property binding syntax []
+
+	2. child to parent :
+		to send the data from child to parent we need to use @Output Decorator
+		following step:
+			1.Declare a field in the child component of type EvenEmitter
+			2.Define a method in a child component which emit the data
+			we send to parent component by calling emit() on EvenEmitter
+			3.With in the tag of child component mention name of  EvenEmitter object
+			and method of parent component using even binding syntax ()
+			
+create a new component StudentUpdate which is child component of Students component
+StudentUpdate component should show details of selected students
+rollNo must be Read-Only
+

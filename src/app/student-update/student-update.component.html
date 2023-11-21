@@ -1,0 +1,21 @@
+<h3>Student Update form</h3>
+<form (ngSubmit)="performUpadte()">
+    <label for="rollNo">Roll No</label><br>
+    <input type="number" [(ngModel)]="updatedStudent.rollNo" name="rollNo" readonly><br>
+
+    <label for="name">Name</label><br>
+    <input type="text" [(ngModel)]="updatedStudent.name" name="name" ><br>
+
+    <label for="attempts">Attempts</label><br>
+    <input type="text" [(ngModel)]="updatedStudent.attempts" name="attempts"><br>
+
+    <label for="percentage">Percentage</label><br>
+    <input type="text" [(ngModel)]="updatedStudent.percentage" name="percentage" ><br><br>
+
+    <label for="">Subjects Learning</label>
+    <input type="text" [(ngModel)]="updatedStudent.subjectsLearning" name="subjectsLearning" ><br><br>
+
+    <input type="submit" value="Update">
+
+</form>
+

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-logout',
@@ -10,11 +11,12 @@ import { Router } from '@angular/router';
   styleUrl: './logout.component.css'
 })
 export class LogoutComponent {
-  constructor(private r:Router){
+  constructor(private r:Router, private service:UserService){
     this.logout();
   }
 
   logout(){
+    this.service.isUserLoggedIn = false;
     this.r.navigate(['login']);
   }
 }

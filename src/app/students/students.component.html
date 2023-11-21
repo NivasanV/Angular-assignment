@@ -36,3 +36,9 @@
     </tbody>
 </table>
 <span [class]="colorClass">{{message}}</span>
+<br>
+
+<div *ngIf="isUpdate">
+    <app-student-update [updatedStudent]="selectedStudent" (studentEmitter)="doUpdate($event)"></app-student-update>
+</div>
+

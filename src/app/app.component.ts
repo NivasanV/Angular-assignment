@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MenuComponent } from './menu/menu.component';
 import { LogoutComponent } from './logout/logout.component';
+import { StudentUpdateComponent } from './student-update/student-update.component';
 
 @Component({
   selector: 'app-root',
