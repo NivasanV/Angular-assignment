@@ -1,5 +1,19 @@
-<app-header></app-header>
-<app-menu></app-menu>
-<app-logout></app-logout>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<mat-toolbar color="primary">
+    <mat-icon (click)="s.toggle()">menu</mat-icon>
+    <app-header></app-header>
+</mat-toolbar>
+
+<mat-sidenav-container>
+
+    <mat-sidenav #s opened="true" mode="push">
+        <app-menu></app-menu>
+        <app-logout></app-logout>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+    <app-footer></app-footer>
+</mat-sidenav-container>
+

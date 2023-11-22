@@ -1,13 +1,11 @@
-
-<br>
-<button (click)="showStudents()">Show Students</button>
-<br>
 <label>Sort By:</label>
-<input name="sort" type="radio" (click)="sortByPercent()">Percentage
-<input name="sort" type="radio"  (click)="sortByAttempts()">Attempts
-<input name="sort" type="radio" (click)="sortByNoOfSubjects()">No of Subjects
+<mat-radio-group>
+    <mat-radio-button (click)="sortByPercent()">Percentage</mat-radio-button>
+    <mat-radio-button (click)="sortByAttempts()">Attempts</mat-radio-button>
+    <mat-radio-button (click)="sortByNoOfSubjects()">No of Subjects</mat-radio-button>
+</mat-radio-group>
 
-<h4>Student List is:</h4>
+<h3>Student List is:</h3>
 <table *ngIf="students.length > 0">
     <thead>
         <th>Roll No</th>
@@ -22,15 +20,15 @@
             <td>{{s.rollNo}}</td>
             <td>{{s.name | uppercase}}</td>
             <td>{{s.attempts}}</td>
-            <td>{{s.percentage}}</td>
+            <td>{{s.percentage/100 | percent}}</td>
             <td>
                 <ul *ngFor="let sub of s.subjectsLearning">
                     <li>{{sub}}</li>
                 </ul>
             </td>
             <td>
-                <button class="btn-delete" (click)="deleteStudent(s.rollNo)">Delete</button>&nbsp;
-                <button (click)="updateStudent(s)">Update</button>
+                <button mat-raised-button color="warn" class="btn-delete" (click)="deleteStudent(s.rollNo)">Delete</button>&nbsp;
+                <button mat-raised-button color="primary" (click)="updateStudent(s)">Update</button>
             </td>
         </tr>
     </tbody>

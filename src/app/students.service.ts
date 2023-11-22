@@ -17,7 +17,7 @@ export class StudentsService {
     this.students.push(s3);
     this.students.push(s4);
     this.students.push(s5);
-  }
+  } 
 
   findAllStudents(){
     return this.students;

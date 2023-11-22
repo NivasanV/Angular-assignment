@@ -2,13 +2,17 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Student } from '../../module/Student';
 import { StudentsService } from '../students.service';
-import { UserService } from '../user.service';
 import { StudentUpdateComponent } from '../student-update/student-update.component';
+import { MatButtonModule } from "@angular/material/button";
+import { MatRadioModule } from "@angular/material/radio";
 
 @Component({
   selector: 'app-students',
   standalone: true,
-  imports: [CommonModule, StudentUpdateComponent],
+  imports: [
+    CommonModule, StudentUpdateComponent,
+    MatButtonModule, MatRadioModule
+  ],
   templateUrl: './students.component.html',
   styleUrl: './students.component.css'
 })

@@ -1,7 +1,4 @@
-a{
-    padding: 5px;
-    background: rgb(36, 255, 36);
+ul{
+    list-style: none;
 }
-div{
-    margin-bottom: 20px;
-}
+
