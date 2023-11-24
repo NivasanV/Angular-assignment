@@ -1,25 +1,29 @@
-<h3>Student Update form</h3>
+<mat-dialog-content>
+    <h3>Student Update form</h3>
+</mat-dialog-content>
+<mat-dialog-actions>
 <form (ngSubmit)="performUpadte()">
     <mat-form-field>
         <label for="rollNo">Roll No</label><br>
-        <input matInput type="number" [(ngModel)]="updatedStudent.rollNo" name="rollNo" readonly>
-    </mat-form-field><br>
+        <input matInput type="number" [(ngModel)]="data.rollNo" name="rollNo" readonly>
+    </mat-form-field>
 
     <mat-form-field>
         <label for="name">Name</label><br>
-        <input matInput type="text" [(ngModel)]="updatedStudent.name" name="name">
+        <input matInput type="text" [(ngModel)]="data.name" name="name">
     </mat-form-field><br>
 
     <mat-form-field>
         <label for="attempts">Attempts</label><br>
-        <input type="text" [(ngModel)]="updatedStudent.attempts" name="attempts">
-    </mat-form-field><br>
+        <input type="text" [(ngModel)]="data.attempts" name="attempts">
+    </mat-form-field>
 
     <mat-form-field>
         <label for="percentage">Percentage</label><br>
-        <input type="text" [(ngModel)]="updatedStudent.percentage" name="percentage">
-    </mat-form-field>
+        <input type="text" [(ngModel)]="data.percentage" name="percentage">
+    </mat-form-field><br>
 
     <button mat-raised-button color="primary" type="submit">Update</button>
 
 </form>
+</mat-dialog-actions>
