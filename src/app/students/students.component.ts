@@ -27,12 +27,24 @@ export class StudentsComponent {
   // isUpdate: boolean = false;
 
   constructor(private service: StudentRestService, private dialog: MatDialog) {
-    
+    this.showStudents();
   }
 
   showStudents() {
     this.service.findAllStudents().subscribe(
-      res => this.students = res
+      res => {
+        this.students = res;
+        console.log(res);
+      }
+    );
+  }
+
+  deleteStudentByRollNo(rollno: number){
+    this.service.deleteByRollNo(rollno).subscribe(
+      success => {
+        this.showStudents();
+        console.log("Student Deleted with Rollno: "+rollno);
+      }
     );
   }
 
@@ -41,16 +53,16 @@ export class StudentsComponent {
   }
 
   sortByAttempts() {
-    this.students.sort((a, b) => a.attempts - b.attempts);
+    this.students.sort((a, b) => a.numberOfAttempts - b.numberOfAttempts);
   }
 
   sortByNoOfSubjects() {
     this.students.sort((a, b) => a.subjectsLearning.length - b.subjectsLearning.length)
   }
 
-  deleteStudent(rollNo: number) {
-    if (confirm("Delete the Student with Roll No:" + rollNo)) {
-      this.students = this.students.filter(s => s.rollNo != rollNo);
+  deleteStudent(rollno: number) {
+    if (confirm("Delete the Student with Roll No:" + rollno)) {
+      this.students = this.students.filter(s => s.rollno != rollno);
       this.message = 'Record Delete :)';
       this.colorClass = 'success';
     }
@@ -71,11 +83,11 @@ export class StudentsComponent {
     // map is built-in function of javascript that transform every element of array
     // which is exactly similar to lambda function and return new array
     let modifiedStudents = this.students.map(s => {
-      if (s.rollNo == updatedStudent.rollNo) {
+      if (s.rollno == updatedStudent.rollno) {
         // following line is make use of spread operator
         // spread operator is added in ES6
         // using follwoing line we are changing the value of attemps field
-        return { ...s, attempts: updatedStudent.attempts }
+        return { ...s, numberOfAttempts: updatedStudent.numberOfAttempts }
       }
       else {
         return s;

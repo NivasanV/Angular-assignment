@@ -6,7 +6,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { LogoutComponent } from './logout/logout.component';
 import { RegisterComponent } from './register/register.component';
 import { authGuard } from './auth.guard';
-
+ 
 export const routes: Routes = [
     {
         path:'students',

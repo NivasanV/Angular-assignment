@@ -17,7 +17,7 @@ export class StudentRestService {
   }
 
   findByRollNo(rollNo: number): Observable<Student> {
-    return this.http.get<Student>(this.BASE_URL + rollNo)
+    return this.http.get<Student>(this.BASE_URL +"/"+ rollNo)
   }
 
   saveStudent(s: Student): Observable<Student> {
@@ -25,7 +25,7 @@ export class StudentRestService {
   }
 
   deleteByRollNo(rollNo: number): Observable<Student> {
-    return this.http.delete<Student>(this.BASE_URL + rollNo)
+    return this.http.delete<Student>(this.BASE_URL +"/"+ rollNo)
   }
 
   updateStudent(s: Student): Observable<Student> {

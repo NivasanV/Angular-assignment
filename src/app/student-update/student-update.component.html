@@ -5,7 +5,7 @@
 <form (ngSubmit)="performUpadte()">
     <mat-form-field>
         <label for="rollNo">Roll No</label><br>
-        <input matInput type="number" [(ngModel)]="data.rollNo" name="rollNo" readonly>
+        <input matInput type="number" [(ngModel)]="data.rollno" name="rollNo" readonly>
     </mat-form-field>
 
     <mat-form-field>
@@ -15,7 +15,7 @@
 
     <mat-form-field>
         <label for="attempts">Attempts</label><br>
-        <input type="text" [(ngModel)]="data.attempts" name="attempts">
+        <input type="text" [(ngModel)]="data.numberOfAttempts" name="attempts">
     </mat-form-field>
 
     <mat-form-field>
